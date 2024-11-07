@@ -1,0 +1,256 @@
+:root{
+    --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+.video::before{
+    content: "";
+    transition: clip-path 2s;
+    display: block;
+    background: #3498db;
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    clip-path: var(--clippy);
+}
+.video:hover::before{
+    clip-path: polygon(0 0, 89% 0, 100% 100%, 0% 100%);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    background: paleturquoise;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+
+}
+
+header {
+
+    color: rgb(8, 8, 8);
+    padding: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(15, 15, 15);
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    color: #ee1515;
+    transition: color 0.3s ease;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#entradas {
+    width: 70%;
+    padding-right: 30px;
+}
+
+aside {
+    width: 25%;
+}
+
+article {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+h2 a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+h2 a:hover {
+    color: #f4190d;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+h3 {
+    color: #34495e;
+    font-size: 1.4em;
+    margin-top: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f8220a;
+    text-decoration: none;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fb3802;
+}
+
+.entrada-individual h2 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.entrada-individual p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+/* comentarios*/
+/* Estilos generales del formulario */
+form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor para cada grupo de label + input */
+form > div {
+    display: flex;
+    align-items: start;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+/* Estilos para las etiquetas */
+label {
+    flex: 0 0 120px; /* Ancho fijo para las etiquetas */
+    padding-top: 12px; /* Alinear con los inputs */
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+textarea {
+    flex: 1; /* Toma el espacio restante */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+/* Estilos para el textarea */
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Estilos para el foco en los campos */
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+/* Contenedor del botón */
+form > div:last-child {
+    margin-left: 140px; 
+}
+
+button[type="submit"] {
+    padding: 12px 30px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #357abd;
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+input:required,
+textarea:required {
+    border-left: 3px solid #4a90e2;
+}
+
+@media (max-width: 600px) {
+    form > div {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    label {
+        padding-top: 0;
+    }
+    
+    form > div:last-child {
+        margin-left: 0;
+    }
+    
+    button[type="submit"] {
+        width: 100%;
+    }
+}
